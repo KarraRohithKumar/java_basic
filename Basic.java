@@ -1,30 +1,18 @@
-package ExceptionHandling;
-
-class AgeInvalidException extends Exception {
-    public AgeInvalidException(String messager) {
-        super(messager);
-    }
-}
+package Recursion;
 
 public class Basic {
-    public static void Atage(int age) throws AgeInvalidException {
-        if (age < 18) {
-            throw new AgeInvalidException("not valid");
-        } else {
-            System.out.println("valid");
-        }
+    public static void main(String[] args) {
+        print(1);
     }
 
-    public static void main(String[] args) {
-        try {
-            Atage(98);
-        } catch (AgeInvalidException e) {
-            System.out.println(e.getMessage());
+    static void print(int n) {
+        // base case
+        if(n == 6) {
+            return;
         }
-        try {
-            Atage(20);
-        } catch (AgeInvalidException e) {
-            System.out.println(e.getMessage());
-        }
+        // recursive case
+        System.out.print(n + " ");
+
+        print(n + 1);
     }
 }
